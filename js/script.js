@@ -14,7 +14,6 @@ const eleSlider = document.querySelector('.slider');
 const eleBtnTop = document.querySelector('.btn-top');
 const eleBtnBottom = document.querySelector('.btn-bottom');
 
-// creaare i tag immagine nell'html
 for (let i = 0; i < arrImages.length; i++) {
 	const eleImg = document.createElement('img');
 	eleImg.src = arrImages[i];
@@ -24,23 +23,18 @@ for (let i = 0; i < arrImages.length; i++) {
 		eleImg.classList.add('active');
 	}
 
-	//eleSlider.append(eleImg);
+	eleSlider.append(eleImg);
 }
-// document.querySelector('.slider-img').classList.add('active');
 
-const listEleImg = document.querySelectorAll('.slider-img'); // non e' un array ma qualcosa di simile
+const listEleImg = document.querySelectorAll('.slider-img'); 
 
 let activeIndex = 0;
 
-// aggiungere gli event listeners ai due bottoni
 eleBtnBottom.addEventListener('click', function () {
-	// togliere la classe active dall'elemento attivo corrente
 	listEleImg[activeIndex].classList.remove('active');
 
-	// incrementare l'active index
 	activeIndex++;
 
-	// aggiungere la classe active all'elemento successivo
 	listEleImg[activeIndex].classList.add('active');
 
 	eleBtnTop.classList.remove('hidden');
@@ -50,13 +44,10 @@ eleBtnBottom.addEventListener('click', function () {
 });
 
 eleBtnTop.addEventListener('click', function () {
-	// togliere la classe active dall'elemento attivo corrente
 	listEleImg[activeIndex].classList.remove('active');
 
-	// incrementare l'active index
 	activeIndex--;
 
-	// aggiungere la classe active all'elemento successivo
 	listEleImg[activeIndex].classList.add('active');
 
 	eleBtnBottom.classList.remove('hidden');
