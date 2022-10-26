@@ -44,7 +44,7 @@ body {
 }
 
 .btn-top:hover, .btn-bottom:hover {
-	background-color: rgb(193, 219, 227);
+	background-color: rgb(193, 209, 227);
 	cursor: pointer;
 }
 
