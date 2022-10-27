@@ -12,16 +12,22 @@ body {
 
 
 .slider {
-	position: relative;
 	margin: auto;
 	height: 80%;
 	width: 60%;
 	max-width: 600px;
-	max-height: 400px;
+	max-height: 500px;
 	background-color: rgb(0, 0, 0);
 }
 
-.controls {
+.slider .slider-viewer {
+	position: relative;
+	height: 80%;
+}
+
+.slider .controls {
+	position: absolute;
+	inset: 0;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -48,7 +54,7 @@ body {
 	cursor: pointer;
 }
 
-.slider-img {
+.slider.controls {
 	position: absolute;
 	inset: 0;
 	display: none;
@@ -58,10 +64,30 @@ body {
 	object-position: center;
 }
 
-.active {
+.slider .slider-img.active {
 	display: block;
 }
 
 .hidden {
 	visibility: hidden;
+}
+
+.slider .thumbs {
+	position: relative;
+	display: flex;
+	height: 20%;
+}
+
+.slider .thumb-img {
+	flex: 1 0 0;
+	min-width: 0;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+    filter: opacity(.4);
+}
+
+.slider .thumb-img.active {
+	filter: brightness(1);
+	border: 2px solid white;
 }
